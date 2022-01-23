@@ -1,0 +1,16 @@
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\bin\Debug\net6.0\MarketWatch_API.exe
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\bin\Debug\net6.0\MarketWatch_API.deps.json
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\bin\Debug\net6.0\MarketWatch_API.runtimeconfig.json
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\bin\Debug\net6.0\MarketWatch_API.dll
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\bin\Debug\net6.0\MarketWatch_API.pdb
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\MarketWatch_API.csproj.AssemblyReference.cache
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\MarketWatch_API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\MarketWatch_API.AssemblyInfoInputs.cache
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\MarketWatch_API.AssemblyInfo.cs
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\MarketWatch_API.ImplicitNamespaceImports.cs
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\MarketWatch_API.csproj.CoreCompileInputs.cache
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\MarketWatch_API.dll
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\refint\MarketWatch_API.dll
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\MarketWatch_API.pdb
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\MarketWatch_API.genruntimeconfig.cache
+C:\Users\matth\OneDrive\Desktop\GitProjects\MarketWatch_API\obj\Debug\net6.0\ref\MarketWatch_API.dll
