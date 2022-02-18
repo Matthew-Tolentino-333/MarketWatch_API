@@ -1,12 +1,15 @@
 import sys
 
-from MarketWatchAPI.util import MarketClient
+from MarketWatchAPI.MarketWatch import MarketClient
 
 def main(args):
   print('Welcome to MarktetWatch bot!')
   mc_session = MarketClient('matttolent@gmail.com', 'money4me')
 
-  mc_session.trade('AMC', 20, 'Buy')
+  mc_session.trade('CSCO', 5, 'Buy')
+  mc_session.trade('CSCO', 2, 'Sell')
+  mc_session.trade('CSCO', 3, 'Short')
+
   # mc_session.trade('RECAF', 'OOTC', 10, Buy)
   # mc_session.trade('RECAF', 'OOTC', 10, Sell)
   # mc_session.trade('RECAF', 'OOTC', 10, Short)

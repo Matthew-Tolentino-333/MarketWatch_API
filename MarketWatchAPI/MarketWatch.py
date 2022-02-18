@@ -43,7 +43,8 @@ class MarketClient:
 
     # Attempt login
     try: 
-      print('try login')
+      print('Try login')
+
       response = s.post('https://sso.accounts.dowjones.com/usernamepassword/login', headers=headers, json=payload)
       hidden_form = BeautifulSoup(response.content, features='lxml')
       parsed_hidden_form = hidden_form.find_all('input', attrs={'type': 'hidden'})
@@ -51,9 +52,10 @@ class MarketClient:
       for input in parsed_hidden_form:
         hidden_form_data[input['name']] = input['value']
       s.post('https://sso.accounts.dowjones.com/login/callback', data=hidden_form_data, headers=headers)
+
       time.sleep(random.uniform(2,4))
+      
       res = s.get('https://customercenter.marketwatch.com/home', headers=headers)
-      print(res.url)
       if res.url == 'https://customercenter.marketwatch.com/home':
         print('Login Succesful.')
       else:
@@ -68,7 +70,7 @@ class MarketClient:
     return s
 
   def trade(self, symbol, amount, tradeType):
-    print('--> Buying...', symbol)
+    print('--> {}ing...'.format(tradeType), symbol)
 
     symbol_data = self.getSymbolData(symbol)
 
@@ -84,6 +86,8 @@ class MarketClient:
     res = self.session.post('https://vse-api.marketwatch.com/v1/games/marketbot3/ledgers/{}/trades'.format(symbol_data['ledgerId']), headers=self.headers, json=payload)
     if res.status_code == 200:
       print('{} {} of {}'.format(tradeType, amount, symbol))
+    else:
+      print('{} of {} failed'.format(tradeType, symbol))
 
   # Provide symbol and market identifier code
   def getSymbolData(self, symbol):
