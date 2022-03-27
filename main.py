@@ -1,4 +1,3 @@
-from sqlite3 import DatabaseError
 import sys
 
 from MarketWatchAPI.MarketWatch import MarketClient

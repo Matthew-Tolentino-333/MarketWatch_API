@@ -24,6 +24,7 @@ class Strategy(ABC):
 
 class Simple(Strategy):
   def strategy(self):
+
     return "This is a simple strategy"
 
 class DayTrade(Strategy):
