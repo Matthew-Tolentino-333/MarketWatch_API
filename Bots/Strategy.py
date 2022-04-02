@@ -30,3 +30,7 @@ class Simple(Strategy):
 class DayTrade(Strategy):
   def strategy(self):
     return "This is a Day Trading strategy"
+
+class LongShort(Strategy):
+  def strategy(self):
+      return "This is a Long Short strategy"

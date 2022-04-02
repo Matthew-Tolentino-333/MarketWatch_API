@@ -5,8 +5,9 @@ import random
 from bs4 import BeautifulSoup
 
 class MarketClient:
-  def __init__(self, username, password):
+  def __init__(self, username, password, game):
     self.session = self.login(username, password)
+    self.game = game
     self.headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36'}
   
   def login(self, email, password):
@@ -83,7 +84,7 @@ class MarketClient:
       'tradeType': tradeType
     }
 
-    res = self.session.post('https://vse-api.marketwatch.com/v1/games/marketbot3/ledgers/{}/trades'.format(symbol_data['ledgerId']), headers=self.headers, json=payload)
+    res = self.session.post('https://vse-api.marketwatch.com/v1/games/{}/ledgers/{}/trades'.format(self.game, symbol_data['ledgerId']), headers=self.headers, json=payload)
     if res.status_code == 200:
       print('{} {} of {}'.format(tradeType, amount, symbol))
     else:
@@ -94,7 +95,7 @@ class MarketClient:
     charting_symbol_content = self.session.get('https://services.dowjones.com/autocomplete/data?excludeExs=xmstar&featureClass=P&style=full&count=5&need=symbol&q={}&name_startsWith={}'.format(symbol, symbol), headers=self.headers).content
     charting_symbol = re.search('STOCK\/US\/[A-Z]+\/[A-Z]+', str(charting_symbol_content)).group()
 
-    content = self.session.get("https://www.marketwatch.com/games/marketbot3/tradeorder?chartingSymbol={}".format(charting_symbol, symbol), headers=self.headers).content
+    content = self.session.get("https://www.marketwatch.com/games/{}/tradeorder?chartingSymbol={}".format(self.game, charting_symbol, symbol), headers=self.headers).content
     parsed_data_attrs = BeautifulSoup(content, features='lxml').find('form').attrs  
     data = {
       'djid': parsed_data_attrs['data-djkey'],

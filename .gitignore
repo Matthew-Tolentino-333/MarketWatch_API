@@ -1,0 +1,4 @@
+*.pyc
+
+Bots/__pycache__/Strategy.cpython-39.pyc
+MarketWatchAPI/__pycache__/MarketWatch.cpython-39.pyc
