@@ -3,6 +3,7 @@ import requests
 
 class Stock:
   def __init__(self, symbol):
+    self.symbol = symbol
     self.stock_url = f'https://finance.yahoo.com/quote/{symbol}?p={symbol}&.tsrc=fin-srch'
 
     self.getStockInformation()
@@ -10,16 +11,21 @@ class Stock:
 
   # Sets all stock information
   def getStockInformation(self):
-    session = requests.session()
-    res = session.get(self.stock_url)
-    soup = bs(res.content, features='lxml')
+    print('Getting stock info:', self.symbol)
 
-    self.__getCurrentPrice(soup)
-    self.__getGeneralInfo(soup)
+    try:
+      session = requests.session()
+      res = session.get(self.stock_url)
+      soup = bs(res.content, features='lxml')
 
+      self.__getCurrentPrice(soup)
+      self.__getGeneralInfo(soup)
+    except:
+      print('Error with stock:', self.symbol)
+      return None
 
   # Set current stock price
-  def __getCurrentPrice(self, soup):    
+  def __getCurrentPrice(self, soup):
     self.price = soup.find('fin-streamer', class_="Mb(-4px)").contents[0]
 
   def __getGeneralInfo(self, soup):

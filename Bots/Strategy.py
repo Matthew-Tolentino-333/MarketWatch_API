@@ -28,7 +28,6 @@ class Strategy(ABC):
 class Simple(Strategy):
   def strategy(self, watch_list):
     print("This is a simple strategy")
-    # print(watch_list)
     return
 
 class DayTrade(Strategy):
