@@ -1,3 +1,4 @@
+from textwrap import dedent
 from bs4 import BeautifulSoup as bs
 import requests
 
@@ -63,4 +64,19 @@ class Stock:
         case 0:
           self.market_cap = ele.contents[0]
           break
+
+  def __repr__(self):
+    return dedent(
+      f"""
+      --- STOCK: {self.symbol} ---
+      Price: ...........{self.price}
+      Prev Close Value: {self.prev_close_value}
+      Open Value: ......{self.open_value}
+      Bid Value: .......{self.bid_value}
+      Ask Value: .......{self.ask_value}
+      Day Range: .......{self.day_range}
+      Year Range: ......{self.year_range}
+      Volume: ..........{self.volume}
+      Avg Volume: ......{self.avg_volume}
+      """)
 
